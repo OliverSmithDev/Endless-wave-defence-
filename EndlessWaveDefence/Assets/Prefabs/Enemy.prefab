@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 3176403383666503782}
   - component: {fileID: -5891044959140793779}
   - component: {fileID: 6259325900366597981}
+  - component: {fileID: -1798602847031291521}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +33,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 171.27399, y: -245.9298, z: 306.48175}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,10 +57,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -83,6 +87,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &1161038987840370225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 3653843128547596220, guid: a6a614dd173848a49b5a4d6fc3cc5346, type: 3}
   Speed: 0.05
+  playerxp: {fileID: 4495881280635848909, guid: 539c6fd7d86ada246a08836bb722615b,
+    type: 3}
 --- !u!54 &-5891044959140793779
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -124,7 +131,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!65 &6259325900366597981
 BoxCollider:
@@ -139,3 +146,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1.2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1798602847031291521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247979343877545192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4f4a7ad4d060144aedf74aa630d767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthEnemy: 0
+  HealthMulti: 1.5
+  Timer: 0
+  gamemanager: {fileID: -7754480979473564769, guid: 27dce7ff4fbf1fd479fafe028121c52f,
+    type: 3}
+  XP: {fileID: 4290564657645347966, guid: 3075a56ea10222e4a9abd38c10436da9, type: 3}

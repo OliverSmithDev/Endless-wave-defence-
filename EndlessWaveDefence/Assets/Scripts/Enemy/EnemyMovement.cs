@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour
     public GameObject Player;
     public float Speed;
 
+    public PlayerXP playerxp;
+
 
    
     // Start is called before the first frame update
@@ -18,10 +20,14 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, Speed);
-        print("MovingTowards");       
+        if (playerxp.MenuActive == false)
+        {
+       
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, Speed);
+            print("MovingTowards");
+        }
+              
     }
 }

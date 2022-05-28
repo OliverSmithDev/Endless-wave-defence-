@@ -11,16 +11,31 @@ public class EnemySpawn : MonoBehaviour
     public int WaveMulti;
     private int EnemySpawning = 2;
     private IEnumerator coroutine;
+    public float Timer;
+
+    public PlayerXP playerxp;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        CanSpawn = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(playerxp.MenuActive == true)
+        {
+            CanSpawn = false;
+        }
+
+        Timer += Time.deltaTime;
+
+        if(Timer >= 20f)
+        {
+            Timer = 0;
+            CanSpawn = true;
+        }
 
       if(CanSpawn == true)
         {

@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public float HealthMulti = 1.5f;
     public float Timer;
     public GameManager gamemanager;
+    public GameObject XP;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,15 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(HealthEnemy <= 0)
+        {
+            EnemyDeath();
+        }
+    }
+
+    void EnemyDeath()
+    {
+        Instantiate(XP, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
