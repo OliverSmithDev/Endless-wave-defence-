@@ -22,6 +22,8 @@ public class AreaRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if(CanIncrease == true)
         {
             transform.localScale *= radiusMulti;

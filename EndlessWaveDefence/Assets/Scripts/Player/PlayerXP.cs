@@ -7,6 +7,7 @@ public class PlayerXP : MonoBehaviour
     public float XP;
     public float XPNeeded;
     public float XpMulti;
+    public float xpgained;
     public GameObject MenuUI;
 
     public GameObject Slot1;
@@ -27,6 +28,7 @@ public class PlayerXP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MenuActive = false;
         MenuUI.SetActive(false);
     }
 
@@ -43,7 +45,7 @@ public class PlayerXP : MonoBehaviour
     {
         if(collision.gameObject.tag == "XP")
         {
-            XP += 1;
+            XP += xpgained;
             Destroy(collision.gameObject);
         }
     }
@@ -87,6 +89,10 @@ public class PlayerXP : MonoBehaviour
         Slot2.transform.position = Spot2.position;
         Slot3.transform.position = Spot3.position;
 
+        print("ClearList");
+        UpgradeList = new List<GameObject>();
+        UpgradeList.AddRange(GameObject.FindGameObjectsWithTag("Upgrades"));
+        
     }
 
    void PickUpgrade()

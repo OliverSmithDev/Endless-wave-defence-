@@ -8,7 +8,15 @@ public class Upgrades : MonoBehaviour
     public float DamageMulti;
 
     private AreaRange arearange;
-    
+    private Spike spike;
+    private PlayerMove playermove;
+    private PlayerXP playerxp;
+    private PlayerHealth playerhealth;
+    private Lightning lightning;
+
+    private GameObject ArmourOBJ;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +54,7 @@ public class Upgrades : MonoBehaviour
 
     void Spikes()
     {
-
+        spike.SpikeDamageFloat *= 1.25f;
     }
 
     void Fire()
@@ -56,7 +64,7 @@ public class Upgrades : MonoBehaviour
 
     void Lightning()
     {
-
+        lightning.LightningDamage *= 1.25f;
     }
 
     void AcidRain()
@@ -64,9 +72,12 @@ public class Upgrades : MonoBehaviour
 
     }
 
+
+    // Non Combat
+
     void Health()
     {
-
+        playerhealth.MaxHealth *= 1.25f;
     }
 
     void Range() // Range of attacks
@@ -77,22 +88,28 @@ public class Upgrades : MonoBehaviour
 
     void Regen()
     {
-
+        playerhealth.RegenMulti +=1;
     }
 
     void XPMulti()
     {
-
+        playerxp.xpgained *= 1.25f;
     }
 
     void Boot()
     {
-
+        playermove.CurrentSpeed *= 1.25f;
     }
 
     void Armour()
     {
+        ArmourOBJ = GameObject.Find("ExtraArmour");
+        playerhealth.Armour -= 0.05f;
 
+        if (playerhealth.Armour <= 0.1f)
+        {
+            ArmourOBJ.gameObject.tag = ("FullyUpgraded");
+        }
     }
 
     void Cloak()

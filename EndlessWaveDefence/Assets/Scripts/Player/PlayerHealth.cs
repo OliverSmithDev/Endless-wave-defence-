@@ -10,8 +10,14 @@ public class PlayerHealth : MonoBehaviour
     public bool CanDamage;
     private IEnumerator coroutine;
 
+    public float MaxHealth;
+    public float HealthRegen;
+    public bool canregen;
+    public float RegenTimer;
     public Collider ObjectCollider;
-
+    public float RegenMulti;
+    public float Armour = 0.9f;
+    public float EnemyDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +28,22 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        HealthRegen = Health / 100 * RegenMulti;
+
+        if(canregen == true && Health <= MaxHealth)
+        {
+            StartCoroutine(RegainHealthOverTime());
+        }
+
+        RegenTimer += Time.deltaTime;
+
+        if(RegenTimer >= 30)
+        {
+            canregen = true;
+            RegenTimer = 0f;
+        }
+
         if (CanDamage == true)
         {
             coroutine = StartDamage();
@@ -63,7 +85,7 @@ public class PlayerHealth : MonoBehaviour
     {
 
         print("HitEnemy");
-        Health -= 1;
+        Health -= (EnemyDamage * Armour);
 
         // enemyhealth.HealthEnemy -= playerdamge.Damage;
         print("Damaged");
@@ -72,6 +94,14 @@ public class PlayerHealth : MonoBehaviour
 
 
 
+    }
+
+    private IEnumerator RegainHealthOverTime()
+    {
+        yield return new WaitForSeconds(1f);
+        Health *= HealthRegen;
+        print("Regen");
+        canregen = false;
     }
 
 

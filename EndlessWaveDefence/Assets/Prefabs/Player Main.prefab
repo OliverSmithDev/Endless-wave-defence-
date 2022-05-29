@@ -114,6 +114,7 @@ MonoBehaviour:
   CanSpawn: 0
   WaveMulti: 2
   Timer: 0
+  playerxp: {fileID: 4495881280635848909}
 --- !u!1 &8072133068952744517
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +229,7 @@ MonoBehaviour:
   CanSpawn: 0
   WaveMulti: 2
   Timer: 0
+  playerxp: {fileID: 4495881280635848909}
 --- !u!1 &8072133069297590328
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +277,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   CanDamage: 0
+  MaxHealth: 0
+  HealthRegen: 0
+  canregen: 0
+  RegenTimer: 0
   ObjectCollider: {fileID: 0}
+  RegenMulti: 0
+  Armour: 0.9
+  EnemyDamage: 0
 --- !u!65 &8072133069297590310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -403,6 +412,7 @@ MonoBehaviour:
   CanSpawn: 0
   WaveMulti: 2
   Timer: 0
+  playerxp: {fileID: 4495881280635848909}
 --- !u!1 &8072133069788973382
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +611,7 @@ MonoBehaviour:
   CanSpawn: 0
   WaveMulti: 2
   Timer: 0
+  playerxp: {fileID: 4495881280635848909}
 --- !u!1 &8072133070261810767
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +629,7 @@ GameObject:
   - component: {fileID: 4495881280635848907}
   - component: {fileID: 4495881280635848908}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player Main
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,7 +734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  AreaRange: {fileID: 0}
+  AreaRange: {fileID: 8072133070613036037}
 --- !u!114 &4495881280635848909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,16 +750,15 @@ MonoBehaviour:
   XP: 0
   XPNeeded: 10
   XpMulti: 1.5
+  xpgained: 0
   MenuUI: {fileID: 0}
   Slot1: {fileID: 0}
   Slot2: {fileID: 0}
   Slot3: {fileID: 0}
-  UpgradesArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  Spot1: {fileID: 0}
+  Spot2: {fileID: 0}
+  Spot3: {fileID: 0}
+  UpgradeList: []
   MenuActive: 0
 --- !u!114 &4495881280635848907
 MonoBehaviour:
@@ -894,3 +904,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanDamage: 0
   HitObject: {fileID: 0}
+  AreaDamage: 1
+  radiusMulti: 0.5
+  CanIncrease: 0
