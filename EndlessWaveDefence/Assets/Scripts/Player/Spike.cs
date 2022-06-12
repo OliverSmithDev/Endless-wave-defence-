@@ -11,6 +11,7 @@ public class Spike : MonoBehaviour
     public float SpawnTimer;
     public EnemyHealth enemyhealth;
     private GameObject Player;
+    public bool CanActivateSpike;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,11 @@ public class Spike : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnTimer += Time.deltaTime;
+        if(CanActivateSpike == true)
+        {
+            SpawnTimer += Time.deltaTime;
+        }
+        
 
         if(SpawnTimer >= maxtimer)
         {

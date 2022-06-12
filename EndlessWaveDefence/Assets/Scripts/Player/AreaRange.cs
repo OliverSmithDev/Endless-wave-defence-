@@ -65,7 +65,7 @@ public class AreaRange : MonoBehaviour
     {
         
             print("HitEnemy");
-            HitObject.GetComponent<EnemyHealth>().HealthEnemy -= AreaDamage;
+            HitObject.GetComponent<EnemyHealth>().HealthEnemy -= (AreaDamage * playerdamge.Damage);
            
            // enemyhealth.HealthEnemy -= playerdamge.Damage;
             print("Damaged");

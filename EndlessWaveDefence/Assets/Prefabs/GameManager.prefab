@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5636691607818127992}
   - component: {fileID: -7754480979473564769}
+  - component: {fileID: -3929919238216481888}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,3 +49,23 @@ MonoBehaviour:
   HealthMulti: 1.5
   Timer: 0
   MaxTimer: 10
+--- !u!114 &-3929919238216481888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7427433388492180536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ab1ff434e85814c976d4472ffa3fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageMulti: 0
+  arearange: {fileID: 0}
+  spike: {fileID: 0}
+  playermove: {fileID: 0}
+  playerxp: {fileID: 0}
+  playerhealth: {fileID: 0}
+  lightning: {fileID: 0}
+  Player: {fileID: 8072133070261810767, guid: 539c6fd7d86ada246a08836bb722615b, type: 3}

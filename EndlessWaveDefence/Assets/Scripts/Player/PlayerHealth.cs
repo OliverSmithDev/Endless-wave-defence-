@@ -18,13 +18,6 @@ public class PlayerHealth : MonoBehaviour
     public float RegenMulti;
     public float Armour = 0.9f;
     public float EnemyDamage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

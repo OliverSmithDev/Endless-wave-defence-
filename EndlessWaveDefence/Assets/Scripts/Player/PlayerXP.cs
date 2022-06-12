@@ -20,6 +20,7 @@ public class PlayerXP : MonoBehaviour
     public Transform Spot3;
     //public GameObject[] UpgradesArray;
     public List<GameObject> UpgradeList;
+    public List<GameObject> List2;
     
     int index;
 
@@ -82,6 +83,14 @@ public class PlayerXP : MonoBehaviour
             Slot3 = UpgradeList[index];
             UpgradeList.RemoveAt(index);
 
+
+            foreach (GameObject UpgradeUI in UpgradeList)
+            {
+                UpgradeUI.SetActive(false);
+                List2.Add(UpgradeUI);
+            }
+
+            
             UpgradeList.Clear();
         }
 
@@ -92,12 +101,21 @@ public class PlayerXP : MonoBehaviour
         print("ClearList");
         UpgradeList = new List<GameObject>();
         UpgradeList.AddRange(GameObject.FindGameObjectsWithTag("Upgrades"));
+        UpgradeList.AddRange(List2);
         
     }
 
-   void PickUpgrade()
+  public void PickUpgrade()
     {
-        
+        foreach (GameObject UpgradeCards in List2)
+        {
+            UpgradeCards.SetActive(true);
+        }
+
+        List2.Clear();
+        Slot1 = null;
+        Slot2 = null;
+        Slot3 = null;
     }
 
 }

@@ -11,6 +11,7 @@ TagManager:
   - PlayerGround
   - FullyUpgraded
   - Upgrades
+  - PlayerHealth
   layers:
   - Default
   - TransparentFX
